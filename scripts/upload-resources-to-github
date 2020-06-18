@@ -14,7 +14,7 @@ AGG_K8S_RESOURCES=$BUILD_DIR/all-resources.yaml
 HELM_ARCHIVES_DIR=$BUILD_DIR/helm-chart-archives
 
 RELEASE_ID=$(curl -s -H "Authorization: token $GITHUB_TOKEN" \
-    https://api.github.com/repos/aws/amazon-ec2-metadata-mock/releases | \
+    https://api.github.com/repos/brycahta/amazon-ec2-metadata-mock/releases | \
     jq --arg VERSION "$VERSION" '.[] | select(.tag_name==$VERSION) | .id')
 
 export TERM="xterm"
