@@ -78,7 +78,7 @@ upload_asset() {
 
 ASSETS=$(gather_assets_to_upload)
 COUNT=1
-echo -e "\nUploading release assets for release id '$RELEASE_ID' to Github"
+echo -e "\nUploading release assets for release id '$RELEASE_ID' and version '$VERSION' to Github"
 for asset in $ASSETS; do
     name=$(echo $asset | tr '/' '\n' | tail -1)
     echo -e "\n  $((COUNT++)). $name"

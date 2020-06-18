@@ -1,6 +1,6 @@
 VERSION = $(shell git describe --tags --always --dirty)
 LATEST_TAG=$(shell git tag | tail -1)
-IMG ?= amazon/amazon-ec2-metadata-mock
+IMG ?= brycahta/dockerhub-testing
 IMG_TAG ?= ${VERSION}
 IMG_W_TAG = ${IMG}:${IMG_TAG}
 DOCKERHUB_USERNAME ?= ""
@@ -80,7 +80,7 @@ upload-resources-to-github:
 
 build-release-assets: create-build-dir build-binaries generate-k8s-yaml gen-helm-chart-archives
 
-release: upload-resources-to-github
+release: build-release-assets upload-resources-to-github
 
 build-docker-images:
 	${MAKEFILE_PATH}/scripts/build-docker-images -d -p ${SUPPORTED_PLATFORMS} -r ${IMG} -v ${VERSION}
