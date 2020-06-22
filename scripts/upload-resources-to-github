@@ -36,7 +36,7 @@ handle_errors_and_cleanup() {
             echo "Deleting asset $asset_id"
             curl -X DELETE \
             -H "Authorization: token $GITHUB_TOKEN" \
-            "https://api.github.com/repos/aws/amazon-ec2-metadata-mock/releases/assets/$asset_id"
+            "https://api.github.com/repos/brycahta/amazon-ec2-metadata-mock/releases/assets/$asset_id"
         done
         exit $1
     fi
@@ -60,7 +60,7 @@ upload_asset() {
         -H "Authorization: token $GITHUB_TOKEN" \
         -H "Content-Type: $(file -b --mime-type $1)" \
         --data-binary @$1 \
-        "https://uploads.github.com/repos/aws/amazon-ec2-metadata-mock/releases/$RELEASE_ID/assets?name=$(basename $1)")
+        "https://uploads.github.com/repos/brycahta/amazon-ec2-metadata-mock/releases/$RELEASE_ID/assets?name=$(basename $1)")
 
     response_code=$(echo $resp | sed 's/\(.*\)}//')
     response_content=$(echo $resp | sed "s/$response_code//")
