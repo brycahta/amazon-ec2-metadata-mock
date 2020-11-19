@@ -1,4 +1,4 @@
-# Amazon EC2 Metadata Mock
+# Amazon EC2 Metadata Mock?
 
 **Amazon EC2 Metadata Mock (AEMM)** is a tool to simulate [Amazon EC2 instance metadata service](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html) for local testing.
 
